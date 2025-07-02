@@ -1,0 +1,107 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            perspective: 1000px;
+        }
+
+        @keyframes slideFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background-image: url("photo-1560179707-f14e90ef3623.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: slideFadeIn 1.5s ease-out forwards;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            z-index: 2;
+            opacity: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 80px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-family: 'Pacifico', cursive;
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: slideUp 1s ease-out 1s forwards;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            opacity: 0;
+            animation: slideUp 1s ease-out 1.5s forwards;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #00c6ff, #007bff);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 50px;
+            }
+        }
